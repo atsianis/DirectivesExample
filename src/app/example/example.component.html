@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Toggle the secret password</label>
+            <br>
+            <button
+                class="btn btn-primary"
+                (click)="onToggleDisplay($event)">
+                Toggle me
+            </button>
+            <hr>
+            <p *ngIf="isOn">The secret password is: Tuna</p>
+        </div>
+        <div class="col-md-6">
+            <p *ngFor="let t of clicks; let i = index">
+                <span
+                    [ngStyle]="{backgroundColor: i>=4 ? 'blue' : 'transparent'}" 
+                    [ngClass]="{'white':i>=4}">
+                    click # {{i}} at timestamp: {{t}}
+                </span>
+            </p>
+        </div>
+    </div>
+</div>
